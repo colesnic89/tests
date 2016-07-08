@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tag-It</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet/less" type="text/css" href="Assets/less/bootstrap/bootstrap.less" />
+		<link rel="stylesheet/less" type="text/css" href="Assets/less/styles.less" />
+		<script src="Assets/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+		<script src="Assets/js/less.js" type="text/javascript"></script>
+		<script src="Assets/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="Assets/js/form.validator.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<header>
+			<nav id="top-line" class="navbar navbar-default">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<h2>Tag-It Web</h2>
+							<p>ColdTrak Shipper Registration Portal</p>
+						</div>
+						<div class="col-sm-6 text-right">
+							<a href="/">
+								<img id="logo" src="Assets/img/logo.png" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="collapse navbar-collapse" id="main-menu">
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="Login.html">Login</a>
+						</li>
+						<li>
+							<a href="Scan.html">Scan</a>
+						</li>
+						<li>
+							<a href="Confirm.html">Confirm</a>
+						</li>
+						<li>
+							<a href="Submit.html">Submit</a>
+						</li>
+						<li class="active">
+							<a href="Summary.html">Summary</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="col-lg-9 block-centered">
+					<h2 class="hidden-lg hidden-md hidden-sm">Summary</h2>
+					<div id="summary">
+						<div class="margin-bottom">
+							<label>Shipper</label>
+							<div class="summary-description">Description</div>
+						</div>
+						<div class="margin-bottom">
+							<label>Receiver</label>
+							<div class="summary-description">Description</div>
+						</div>
+						<div class="margin-bottom">
+							<label>Product</label>
+							<div class="summary-description">Description</div>
+						</div>
+						<div class="margin-bottom">
+							<label>Attachments</label>
+							<div class="summary-description">Description</div>
+						</div>
+						<div class="margin-bottom">
+							<label>Devices</label>
+							<div class="summary-description">Description</div>
+						</div>
+					</div>
+					<br />
+					<div>
+						<a class="btn btn-info pull-right"><span class="glyphicon glyphicon-print"></span> Print</a>
+					</div>
+					<div class="clearfix margin-bottom-lg"></div>
+					<div>
+						<a href="Scan.html" class="btn btn-success pull-left"><span class="glyphicon glyphicon-menu-hamburger"></span> More</a>
+						<a href="/" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="container">
+				<div class="pull-right">Version 1.0</div>
+			</div>
+		</footer>
+		<script>
+			FormValidator.init();
+		</script>
+	</body>
+</html>

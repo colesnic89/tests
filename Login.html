@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tag-It</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet/less" type="text/css" href="Assets/less/bootstrap/bootstrap.less" />
+		<link rel="stylesheet/less" type="text/css" href="Assets/less/styles.less" />
+		<script src="Assets/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+		<script src="Assets/js/less.js" type="text/javascript"></script>
+		<script src="Assets/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="Assets/js/form.validator.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<header>
+			<nav id="top-line" class="navbar navbar-default">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<h2>Tag-It Web</h2>
+							<p>ColdTrak Shipper Registration Portal</p>
+						</div>
+						<div class="col-sm-6 text-right">
+							<a href="/">
+								<img id="logo" src="Assets/img/logo.png" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="collapse navbar-collapse" id="main-menu">
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="Login.html">Login</a>
+						</li>
+						<li>
+							<a href="Scan.html">Scan</a>
+						</li>
+						<li>
+							<a href="Confirm.html">Confirm</a>
+						</li>
+						<li>
+							<a href="Submit.html">Submit</a>
+						</li>
+						<li>
+							<a href="Summary.html">Summary</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<form id="signin-form" action="Scan.html">
+					<div class="form-group">
+						<label for="inputEmail" class="control-label">Email address</label>
+						<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required />
+					</div>
+					<div class="form-group">
+						<label for="inputPassword" class="control-label">Password</label>
+						<div class="input-group">
+							<input type="password" id="inputPassword" class="form-control" placeholder="Password" required />
+							<span class="input-group-addon"><span class="glyphicon glyphicon-eye-open"></span></span>
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="checkbox col-sm-6">
+							<label>
+								<input type="checkbox" value="remember-me"> Remember me
+							</label>
+						</div>
+						<div class="col-sm-6">
+							<a onclick="return FormValidator.run('#signin-form')" href="Scan.html" class="btn btn-primary btn-block">Login</a>
+						</div>
+					</div>
+					<div>
+						<a class="pull-left" data-toggle="modal" href="#restorePasswordModal" data-target="#restorePasswordModal">Forgot password</a>
+						<a class="pull-right" data-toggle="modal" href="#requestUserAccountModal" data-target="#requestUserAccountModal">Request User account</a>
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<div class="container">
+				<div class="pull-right">Version 1.0</div>
+			</div>
+		</footer>
+		
+		<!-- Restore password modal  -->
+		<div class="modal fade" id="restorePasswordModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Password Recovery</h4>
+					</div>
+					<div class="modal-body">
+						<form id="restorePasswordForm">
+							<div class="form-group">
+								<label for="restoreEmail" class="control-label">Enter Your Email</label>
+								<div class="input-group">
+									<input id="restoreEmail" class="form-control" type="email" name="email" placeholder="Email" required />
+									<span class="input-group-addon">@</span>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button onclick="FormValidator.run('#restorePasswordForm')" type="button" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Request User Account modal  -->
+		<div class="modal fade" id="requestUserAccountModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Request User Account</h4>
+					</div>
+					<div class="modal-body">
+						<form id="requestUserAccountForm">
+							<div class="form-group">
+								<label for="accountEmail" class="control-label">Email</label>
+								<input id="accountEmail" class="form-control" type="email" name="accountEmail" placeholder="Email" required />
+							</div>
+							<div class="form-group">
+								<label for="firstname" class="control-label">First Name</label>
+								<input id="firstname" class="form-control" type="text" name="fname" placeholder="First Name" required />
+							</div>
+							<div class="form-group">
+								<label for="lastname" class="control-label">Last Name</label>
+								<input id="lastname" class="form-control" type="text" name="lname" placeholder="Last Name" required />
+							</div>
+							<div class="form-group">
+								<label for="company" class="control-label">Company</label>
+								<input id="company" class="form-control" type="text" name="company" placeholder="Company" required />
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button onclick="FormValidator.run('#requestUserAccountForm');" type="button" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			FormValidator.init();
+		</script>
+	</body>
+</html>

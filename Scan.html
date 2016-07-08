@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tag-It</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet/less" type="text/css" href="Assets/less/bootstrap/bootstrap.less" />
+		<link rel="stylesheet/less" type="text/css" href="Assets/less/styles.less" />
+		<script src="Assets/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+		<script src="Assets/js/less.js" type="text/javascript"></script>
+		<script src="Assets/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="Assets/js/form.validator.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<header>
+			<nav id="top-line" class="navbar navbar-default">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<h2>Tag-It Web</h2>
+							<p>ColdTrak Shipper Registration Portal</p>
+						</div>
+						<div class="col-sm-6 text-right">
+							<a href="/">
+								<img id="logo" src="Assets/img/logo.png" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="collapse navbar-collapse" id="main-menu">
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="Login.html">Login</a>
+						</li>
+						<li class="active">
+							<a href="Scan.html">Scan</a>
+						</li>
+						<li>
+							<a href="Confirm.html">Confirm</a>
+						</li>
+						<li>
+							<a href="Submit.html">Submit</a>
+						</li>
+						<li>
+							<a href="Summary.html">Summary</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="col-md-8 block-centered">
+					<h2 class="hidden-lg hidden-md hidden-sm">Scan</h2>
+					<div id="video-wrap" class="jumbotron">
+						<span style="font-size: 250px;" class="glyphicon glyphicon-camera"></span>
+					</div>
+					<form id="scanForm" action="Confirm.html">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="form-group">
+									<label class="control-label" for="deviceList">Device List</label>
+									<select id="deviceList" class="form-control" required name="deviceList" multiple>
+										<option>5803564</option>
+										<option>9568474</option>
+										<option>4987896</option>
+										<option>2459045</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<label class="control-label">&nbsp;</label>
+								<div class="form-group">
+									<a class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remove</a>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="form-group">
+							<a href="Confirm.html" onclick="return FormValidator.run('#scanForm')" class="btn btn-primary pull-right">NEXT <span class="glyphicon glyphicon-arrow-right"></span></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="container">
+				<div class="pull-right">Version 1.0</div>
+			</div>
+		</footer>
+		<script>
+			FormValidator.init();
+		</script>
+	</body>
+</html>
